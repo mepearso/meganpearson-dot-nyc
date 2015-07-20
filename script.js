@@ -1,121 +1,233 @@
 console.log("script.js is linked");
 
-var board = ['one','two','three',
-			'four','five','six',
-			'seven','eight','nine'
-];
-
 var newBoard = [];
 
-// Stage One - Pick Your Letter
-var $buttonX = $('#buttonX');
-var $buttonO = $('#buttonO');
-var player = player;
+var player;
+var computer; 
+var isPlayersTurn; 
+var theWinner;
 
-var playerIsX = $buttonX.click(function(event) {
+$('#buttonX').click(function(event) {
 	console.log("player is X");
-	player = playerIsX; 
+	player = "X";
+	computer = "O";
+	isPlayersTurn = true;
+	renderBoard(); 
 });
 
-var playerIsO = $buttonO.click(function(event) {
+$('#buttonO').click(function(event) {
 	console.log("player is O");
-	player = playerIsO;	
+	player = "O";
+	computer = "X";	
+	isPlayersTurn = false;
+	renderBoard();
+	computerMove(3000);
 });
 
-// Make page reload with game
-
-// Decide who goes first
-
-// if(player === playerIsX){
-// 	console.log("player is X and is going first");
-// 	// game.render();
-// 	// make move;
-// } else if (player === playerIsO) {
-// 	console.log("player is O and is going second");
-// };
-
-//Board is created and divs are pushed to a new array
-for (var index = 0; index < board.length; index++){
-	var $div = $('<div class="box">').attr("id", index);
-	newBoard.push($div);
-	$('.container').append($div);	
-}
-
-// Game Board is Shown
-var Game = function Game(){
-	this.board = board;
-	
-	this.render = function (){
-
-//If player = playerIsX text should be X, else it should be 0
-	$("#0").click(function(event) {
-		console.log("clicked 0");
-		if (player === playerIsX){
-			$("#0").text("X");
-		} else {
-			$("#0").text("O");
-		};		
-	});
-	$("#1").click(function(event) {
-		console.log("clicked 1");
-		$("#1").text("X");
-	});
-	$("#2").click(function(event) {
-		console.log("clicked 2");
-		$("#2").text("X");
-	});
-	$("#3").click(function(event) {
-		console.log("clicked 3");
-		$("#3").text("X");
-	});
-	$("#4").click(function(event) {
-		console.log("clicked 4");
-		$("#4").text("X");
-	});
-	$("#5").click(function(event) {
-		console.log("clicked 5");
-		$("#5").text("X");
-	});
-	$("#6").click(function(event) {
-		console.log("clicked 6");
-		$("#6").text("X");
-	});
-	$("#7").click(function(event) {
-		console.log("clicked 7");
-		$("#7").text("X");
-	});
-	$("#8").click(function(event) {
-		console.log("clicked 8");
-		$("#8").text("X");
+//fades pick-poison & renders the board (divs go in rows and columns)
+var renderBoard = function renderBoard(){
+	$("#pick-letter").fadeOut("slow", function (){
+		$("#board").fadeIn("slow");
 	});
 
+	var index = 0;
+	for (var row = 0; row < 3; row++){
+		var $rowDiv = $('<div class="row">');
+		
+		for (var column = 0; column < 3; column++) {
+			addSquare($rowDiv, index);
+			index++;
+		};
+		
+		$('#board').append($rowDiv);
 	};
 };
 
-// After player makes a move, the computer should make a move (and vice versa)
-// if player has clicked, the opposite letter should be placed in a random place
+//creates divs, pushes divs to new array, registers div click scenarios
+var addSquare = function addSquare($row, index){
+	var $div = $('<div class="box">').attr("id", index);
+	newBoard.push($div);
+	$row.append($div);
+	
+	$div.on("click", function(event) {
+		
+		if (theWinner != null){
+			console.log("idiot face, someone already won");
+			return;
+		}
 
-var $div0 = $("#0").text();
-var $div1 = $("#1");
-var $div2 = $("#2");
-var $div3 = $("#3");
-var $div4 = $("#4");
-var $div5 = $("#5");
-var $div6 = $("#6");
-var $div7 = $("#7");
-var $div8 = $("#8");
+		if ($div.text() != "" ){
+			console.log("idiot face, someone already went there");
+			showGoat();
+			return;
+		}
 
-// if ($div0 === $div1 === $div2){
-// 	console.log("row 1 win");	
+		if (isPlayersTurn === false){
+			console.log("idiot face, it's not your turn");
+			showGoat();
+			return;
+		}
+
+		$div.text(player);
+		isPlayersTurn = false;
+		theWinner = checkForWinner();
+
+		if (theWinner === null){
+			console.log("keep playing");
+			computerMove(1500);
+		} else {
+			console.log("the winner is " + theWinner);
+			showWinner();
+			newGame();
+			return;
+		}
+	});	
+};
+
+//gets X, O, or "tie"
+var getWinningLetter = function getWinningLetter(){
+	var row1 = $('#0').text() + $('#1').text() + $('#2').text()
+	var row2 = $('#3').text() + $('#4').text() + $('#5').text()
+	var row3 = $('#6').text() + $('#7').text() + $('#8').text()
+
+	var col1 = $('#0').text() + $('#3').text() + $('#6').text()
+	var col2 = $('#1').text() + $('#4').text() + $('#7').text()
+	var col3 = $('#2').text() + $('#5').text() + $('#8').text()
+
+	var diagonal1 = $('#0').text() + $('#4').text() + $('#8').text()
+	var diagonal2 = $('#2').text() + $('#4').text() + $('#6').text()
+
+	var winningLetter = null;
+	
+	if ((row1 === "XXX") || (row2 === "XXX") || (row3 === "XXX")) {
+		winningLetter = "X";
+	} else if ((row1 === "OOO") || (row2 === "OOO") || (row3 === "OOO")) {
+		winningLetter = "O";
+	} else if ((col1 === "XXX") || (col2 === "XXX") || (col3 === "XXX")) {
+		winningLetter = "X";
+	} else if ((col1 === "OOO") || (col2 === "OOO") || (col3 === "OOO")) {
+		winningLetter = "O";
+	} else if ((diagonal1 === "XXX") || (diagonal2 === "XXX")) {
+		winningLetter = "X";
+	} else if ((diagonal1 === "OOO") || (diagonal2 === "OOO")) {
+		winningLetter = "O";
+	} else if ((row1.length === 3) && (row2.length === 3) && (row3.length === 3)) {
+		winningLetter = "tie";	
+	} 
+
+	return winningLetter;
+};
+
+//evaluates if there is a winner and who it is
+var checkForWinner = function checkForWinner(){
+	var winningLetter = getWinningLetter();
+	if (player === winningLetter){
+		return "player";
+	} else if (computer === winningLetter) {
+		return "computer";
+	} else if (winningLetter === "tie") { 
+		return "tie";
+	} 
+	return null;
+};
+
+//sets computer delay time after computer has moved
+var computerMove = function computerMove(delayTime){
+	console.log("computer is thinking, because this is super tough");
+	window.setTimeout(completeComputerMove, delayTime);
+};
+
+//moves computer to random div, resets to players turn or gives winner if there is one
+var completeComputerMove = function completeComputerMove(){
+	moveToRandomSquare(); 
+	theWinner = checkForWinner();
+
+	if (theWinner === null){
+		isPlayersTurn = true;
+	} else {
+		console.log("the winner is " + theWinner);
+		showWinner();
+		newGame();
+		return;
+	}
+};
+
+//logic for finding a random div
+var moveToRandomSquare = function moveToRandomSquare(){
+	//creates an array of the empty divs
+	var $emptySpacesArray = newBoard.filter(function($theDiv){
+	   if ($theDiv.text() === ""){
+	      return true;
+		}
+	});
+	
+	// finds a random div
+	var getRandomInt = function getRandomInt(min, max) {
+	  	return Math.floor(Math.random() * (max - min)) + min;
+	}
+
+	//places computers letter into a random div
+	var indexToUse = getRandomInt(0,$emptySpacesArray.length);
+	$emptySpacesArray[indexToUse].text(computer);
+};
+
+//displays and hides teh goat
+var showGoat = function showGoat(){
+	$('#goat').css({display: "block"});
+	$("#goat-scream").get(0).play();
+	  
+	var hideGoat = function hideGoat(){
+		$('#goat').css({display: "none"});
+	};
+
+	window.setTimeout(hideGoat, 1800);
+};
+
+//displays winner or loser graphics
+var showWinner = function showWinner() {
+	if (theWinner === "player"){
+		console.log("sweet victory pic");
+		$('#win').css({display: "block"});
+		return;
+
+	} else if(theWinner === "computer"){
+		console.log("poorly pic");
+		$('#lose').css({display: "block"});
+
+	} else {
+		console.log("tie and show poorly pic")
+		$('#lose').css({display: "block"});
+	}
+};
+
+var newGame = function newGame(){
+	var hideWinner = function hideWinner(){
+		$('#win').css({display: "none"});
+		$('#lose').css({display: "none"});
+	};
+
+	var resetPickLetters = function resetPickLetters(){
+		$("#board").fadeOut("slow", function (){
+		$("#pick-letter").fadeIn("slow");
+		location.reload();
+		});	
+	};
+
+	window.setTimeout(hideWinner, 1000);
+	window.setTimeout(resetPickLetters, 1000);
+};
+
+
+
+
+
+
+//moves computer to next available square
+// var moveToNextOpenSquare = function moveToNextOpenSquare(){
+// 	var $emptySpacesArray = newBoard.filter(function($theDiv){
+// 	   if ($theDiv.text() === ""){
+// 	      return true;
+// 		}
+// 	});
+// 	$emptySpacesArray[0].text(computer);
 // };
-
-console.log( $("#0").val() );
-
-
-
-
-
-
-
-var game = new Game();
-game.render();
