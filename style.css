@@ -8,10 +8,6 @@ body {
   	line-height: 1.25;
 }
 
-.container {
-	width: 950px;
-}
-
 h1 {
 	letter-spacing: 5px;
 	font-size: 100px;
@@ -49,6 +45,7 @@ button:hover{
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
+	width: 100%;
 }
 
 .board-row {
