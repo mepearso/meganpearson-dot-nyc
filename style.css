@@ -119,3 +119,57 @@ button:hover{
 #goat img {
 	width: 600px;
 }
+
+
+
+@media (max-width: 480px){
+
+	#pick-letter{
+		position: inherit;
+		top: 0%;
+		left:0%;
+		transform: none;
+		width:auto;
+	}
+
+	h1 {
+		font-size: 40px;
+		margin-top: 20px;
+	}
+
+	button {
+		width: 200px;
+		height: 200px;
+	  	font-size: 150px;
+	  	margin: 21px;
+	}
+
+	.box {
+		width: 100px;
+		height: 100px;
+		font-size: 80px;
+	}
+
+	#goat {
+		margin-left: -145px;
+	}
+	#goat img {
+		width: auto;
+	}
+
+	#win{
+		margin-left: -250px;
+  		width: auto;
+	}
+
+	#win img {
+		width: 500px;
+	}
+	#lose{
+		margin-left: -476px;
+	}
+
+	#lose img {
+		width: 450px;
+	}
+}
