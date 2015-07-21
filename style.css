@@ -12,18 +12,18 @@ body {
 	width: 950px;
 }
 
+h1 {
+	letter-spacing: 5px;
+	font-size: 100px;
+	/*text-align: center;*/
+}
+
 #pick-letter{
 	position: absolute;
 	top: 50%;
 	left:50%;
 	transform: translateY(-50%) translateX(-50%);
 	width:960px;
-}
-
-h1{
-	letter-spacing: 5px;
-	font-size: 100px;
-	/*text-align: center;*/
 }
 
 button {

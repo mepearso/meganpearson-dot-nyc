@@ -213,12 +213,6 @@ var newGame = function newGame(){
 
 };
 
-
-
-
-
-
-
 //moves computer to next available square
 // var moveToNextOpenSquare = function moveToNextOpenSquare(){
 // 	var $emptySpacesArray = newBoard.filter(function($theDiv){
