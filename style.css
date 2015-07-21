@@ -36,10 +36,11 @@ button {
 #board{
 	display: none;
 	position: absolute;
-	top: 75px;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
-.row {
+.board-row {
 	margin-top:-3px;
 }
 
@@ -80,56 +81,32 @@ button {
 	font-size: 150px;
 }
 
-#win, #lose {
+#win, #lose, #goat {
 	  display: none;
 	  position: absolute;
-	  top: 20px;
 	  left: 50%;
-	  margin-left: -480px;
-	  width: 960px;
 }
 
+#win {
+		top:20px;
+		margin-left: -469px;
+		width:960px;
+		z-index: 1;
+
+}
+#lose {
+	  top: 14px;
+	  margin-left: -496px;
+	  width: 960px;
+	  z-index: 1;
+
+}
 #goat{
-	display: none;
-	position: absolute;
-	top: 81px;
-	left: 50%;
+	top: -10px;
 	margin-left: -286px;
+	z-index: 1;
 }
 
 #goat img {
 	width: 600px;
 }
-
-
-
-/*#board {
-	width: 600px;
-	height: 600px;
-	margin: 0 auto;
-}
-
-.rows {
-	width: 600px;
-}
-
-.columns {
-	height: 600px;
-
-}
-
-.#rowOne {
-	border-bottom: 1px solid white;
-}
-
-.#rowTwo {
-	border-bottom: 1px solid white;
-}
-
-#columnOne {
-	border-right: 1px solid white;
-}
-
-#columnTwo {
-	border-right: 1px solid white;
-}*/

@@ -32,7 +32,7 @@ var renderBoard = function renderBoard(){
 
 	var index = 0;
 	for (var row = 0; row < 3; row++){
-		var $rowDiv = $('<div class="row">');
+		var $rowDiv = $('<div class="board-row">');
 		
 		for (var column = 0; column < 3; column++) {
 			addSquare($rowDiv, index);
@@ -78,7 +78,6 @@ var addSquare = function addSquare($row, index){
 		} else {
 			console.log("the winner is " + theWinner);
 			showWinner();
-			newGame();
 			return;
 		}
 	});	
@@ -147,7 +146,6 @@ var completeComputerMove = function completeComputerMove(){
 	} else {
 		console.log("the winner is " + theWinner);
 		showWinner();
-		newGame();
 		return;
 	}
 };
@@ -185,37 +183,36 @@ var showGoat = function showGoat(){
 
 //displays winner or loser graphics
 var showWinner = function showWinner() {
-	if (theWinner === "player"){
-		console.log("sweet victory pic");
-		$('#win').css({display: "block"});
-		return;
+	var completeShowWinner = function completeShowWinner(){
+		if (theWinner === "player"){
+			console.log("sweet victory pic");
+			$('#win').css({display: "block"});
 
-	} else if(theWinner === "computer"){
-		console.log("poorly pic");
-		$('#lose').css({display: "block"});
+		} else if(theWinner === "computer"){
+			console.log("poorly pic");
+			$('#lose').css({display: "block"});
 
-	} else {
-		console.log("tie and show poorly pic")
-		$('#lose').css({display: "block"});
-	}
+		} else {
+			console.log("tie and show poorly pic")
+			$('#lose').css({display: "block"});
+		}
+	};
+	window.setTimeout(completeShowWinner, 1200);
+	window.setTimeout(newGame, 3000);
 };
 
 var newGame = function newGame(){
-	var hideWinner = function hideWinner(){
-		$('#win').css({display: "none"});
-		$('#lose').css({display: "none"});
-	};
+	$('#win').fadeOut("slow");
+	$('#lose').fadeOut("slow");
 
-	var resetPickLetters = function resetPickLetters(){
-		$("#board").fadeOut("slow", function (){
-		$("#pick-letter").fadeIn("slow");
-		location.reload();
-		});	
-	};
+	$("#board").fadeOut("slow", function (){
+		$("#pick-letter").fadeIn("slow", function (){
+			location.reload();
+		});
+	});	
 
-	window.setTimeout(hideWinner, 1000);
-	window.setTimeout(resetPickLetters, 1000);
 };
+
 
 
 

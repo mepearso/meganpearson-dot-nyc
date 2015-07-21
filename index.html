@@ -9,6 +9,22 @@
 </head>
 
 <body>
+	<div id="board" class="eight column">
+		<div id="win">
+			<img src="./assets/win.png">
+  		</div>
+
+	  	<div id="lose">
+			<img src="./assets/lose.png">
+	  	</div>
+
+	  	<div id="goat">
+			<img src="./assets/goat.png">
+	  	</div>
+	</div>
+	
+	<audio id="goat-scream" src="./assets/goat-scream.mp3"></audio>
+
 	<div class="container">
 		<div id="pick-letter">
 			<div class="row">
@@ -20,31 +36,14 @@
 					<button id="buttonO">O</button>
 				</div>
 			</div>
-		</div>
-
-		<div class="row">
-			<div id="board" class="eight column"></div>
-		</div>
-		<audio id="goat-scream" src="./assets/goat-scream.mp3"></audio>
-
-		
-
+		</div>	
 	</div>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="script.js"></script> 
 
 
-  	<div id="win">
-		<img src="./assets/win.png">
-  	</div>
-
-  	<div id="lose">
-		<img src="./assets/lose.png">
-  	</div>
-
-  	<div id="goat">
-		<img src="./assets/goat.png">
-  	</div>
+  	
 
 </body>
 </html>
