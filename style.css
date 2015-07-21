@@ -146,7 +146,7 @@ button:hover{
 
 	#board{
 		position: inherit;
-		top: 50px;
+		margin-top: 50px;
 		transform: none;
 		width: auto;
 	}
