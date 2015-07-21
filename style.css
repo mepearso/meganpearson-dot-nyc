@@ -97,10 +97,10 @@ button:hover{
 }
 
 #win {
-		top:20px;
-		margin-left: -469px;
-		width:960px;
-		z-index: 1;
+	top:20px;
+	margin-left: -469px;
+	width:960px;
+	z-index: 1;
 
 }
 #lose {
@@ -146,7 +146,7 @@ button:hover{
 
 	#board{
 		position: inherit;
-		margin-top: 50px;
+		margin-top: 100px;
 		transform: none;
 		width: auto;
 	}
@@ -159,7 +159,9 @@ button:hover{
 
 	#goat {
 		margin-left: -145px;
+		margin-top: 100px;
 	}
+
 	#goat img {
 		width: auto;
 	}
@@ -171,9 +173,13 @@ button:hover{
 
 	#win img {
 		width: 500px;
+		margin-top: 100px;
+
 	}
 	#lose{
 		margin-left: -476px;
+		margin-top: 100px;
+
 	}
 
 	#lose img {
