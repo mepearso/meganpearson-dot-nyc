@@ -144,6 +144,13 @@ button:hover{
 	  	margin: 21px;
 	}
 
+	#board{
+		position: inherit;
+		top: 0%;
+		transform: none;
+		width: auto;
+	}
+
 	.box {
 		width: 100px;
 		height: 100px;
