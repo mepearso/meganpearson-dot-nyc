@@ -201,6 +201,7 @@ var showWinner = function showWinner() {
 	window.setTimeout(newGame, 3000);
 };
 
+//fades winner and game board out, renders a new game
 var newGame = function newGame(){
 	$('#win').fadeOut("slow");
 	$('#lose').fadeOut("slow");

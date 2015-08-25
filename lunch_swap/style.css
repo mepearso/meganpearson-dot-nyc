@@ -1,0 +1,28 @@
+body{
+	margin: 50px auto;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: "helvetica", sans-serif;
+}
+
+input{
+	height: 50px;
+}
+
+input[type=submit] {
+	margin-top:20px;
+	padding:5px 15px; 
+	background:#ccc; 
+	border:0 none;
+	cursor:pointer;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; 
+}
+
+ul{
+	list-style-type: none;
+}
+
+li{
+	text-align: left;
+}
