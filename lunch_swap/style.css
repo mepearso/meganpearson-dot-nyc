@@ -22,6 +22,12 @@ input[type=submit] {
 
 ul{
 	list-style-type: none;
+    padding: 30px;
+    width: 300px;
+    margin: 45px auto;
+    text-align: center;
+    background-color: darkseagreen;
+    color: white;
 }
 
 li{
