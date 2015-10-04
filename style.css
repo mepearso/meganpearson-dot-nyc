@@ -1,0 +1,146 @@
+/*@font-face {
+  font-family: 'Gotham-Bold';
+  src: url('assets/fonts/GothaBol') format('woff2'),
+       url('assets/fonts/GothaBol') format('woff'),
+       url('assets/fonts/GothaBol') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gotham-Book';
+  src: url('assets/fonts/GothaBoo') format('woff2'),
+       url('assets/fonts/GothaBoo') format('woff'),
+       url('assets/fonts/GothaBoo') format('truetype');
+}*/
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: 1px;
+	font-size: .9em;
+	text-align: center;
+	margin:0;
+	background: rgb(242,242,242);
+
+}
+
+a{
+	text-decoration: none;
+	font-weight: 700;
+	color:black;
+}
+a:hover{
+	color:darkgrey;
+}
+
+a:visited{
+	color: black;
+}
+
+header img{
+	width:100%;
+}
+section{
+	position: relative;
+	z-index:1;
+	padding-bottom:50px;
+}
+
+section:first-child h2{
+	padding-top: 50px;
+}
+
+h2{
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 3px;
+	font-size: 1.6em;
+	margin-bottom: 50px;
+	font-weight: 700;
+}
+
+main p{
+	display: inline-block;
+	width: 350px;
+    line-height: 1.4em;
+    text-align: justify;
+    margin: 0px 30px;
+}
+
+
+.work:before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .75em;
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: -1;
+  -webkit-transform: skewY(-3deg);
+  -moz-transform: skewY(-3deg);
+  -ms-transform: skewY(-3deg);
+  -o-transform: skewY(-3deg);
+  transform: skewY(-3deg);
+  -webkit-backface-visibility: hidden;
+}
+
+.projects{
+	width: 800px;
+    margin: 0 auto;
+}
+
+article {
+	margin-bottom: 50px;
+}
+
+.short-description{
+	width: 350px;
+	display: inline-block;
+	text-align: left;
+	vertical-align: top;
+	padding: 20px 0 20px 0;
+}
+
+article h3{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+}
+
+article p{
+	margin: 0;
+    width: auto;
+    text-align: left;
+    padding: 10px 0 5px 0;
+}
+
+.tech{
+	font-size: .7em;
+}
+article img{
+	width: 200px;
+}
+
+.contact a{
+	display: inline-block;
+}
+
+.social-media{
+	margin: 30px 0 0 0;
+}
+.social-media img{
+	padding: 0 15px 0 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
