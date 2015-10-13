@@ -7,3 +7,11 @@ $('article').click(function(){
 	$(this).children('.details').slideDown(500);
 });
 
+$(window).scroll(function(e){
+  parallax();
+});
+
+function parallax(){
+  var scrolled = $(window).scrollTop();
+  $('header').css('margin-top',-(scrolled*1.5)+'px');
+}
