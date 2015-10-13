@@ -15,3 +15,5 @@ $('article').click(function(){
 //   var scrolled = $(window).scrollTop();
 //   $('header').css('margin-top',-(scrolled*1.5)+'px');
 // }
+
+// $('.parallax-window').parallax({imageSrc: 'assets/header.jpg'});

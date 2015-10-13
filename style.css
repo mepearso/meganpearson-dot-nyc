@@ -1,17 +1,3 @@
-/*@font-face {
-  font-family: 'Gotham-Bold';
-  src: url('assets/fonts/GothaBol') format('woff2'),
-       url('assets/fonts/GothaBol') format('woff'),
-       url('assets/fonts/GothaBol') format('truetype');
-}
-
-@font-face {
-  font-family: 'Gotham-Book';
-  src: url('assets/fonts/GothaBoo') format('woff2'),
-       url('assets/fonts/GothaBoo') format('woff'),
-       url('assets/fonts/GothaBoo') format('truetype');
-}*/
-
 body{
 	font-family: 'Open Sans', sans-serif;
 	letter-spacing: 1px;
@@ -34,12 +20,12 @@ a:hover{
 a:visited{
 	color: black;
 }
-
-header img{
-	width:100%;
-	position: relative;
+/*HEADER PARLLAX STUFF*/
+.parallax-window {
+    min-height: 500px;
 }
 
+/*EACH SECTION STYLES*/
 section{
 	position: relative;
 	z-index:1;
@@ -48,6 +34,29 @@ section{
 
 section:first-child h2{
 	padding-top: 50px;
+}
+
+/*slanted section lines - reference: http://lawrencenaman.com/css/responsive-slanted-divs-with-css/*/
+.process:before, .work:before, .contact:before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .75em;
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: -1;
+  -webkit-transform: skewY(-3deg);
+  -moz-transform: skewY(-3deg);
+  -ms-transform: skewY(-3deg);
+  -o-transform: skewY(-3deg);
+  transform: skewY(-3deg);
+  -webkit-backface-visibility: hidden;
+}
+
+.process:before, .contact:before{
+	background-color: rgb(242,242,242);
 }
 
 h2{
@@ -66,25 +75,7 @@ main p{
     margin: 0px 30px;
 }
 
-/*REFERENCE: http://lawrencenaman.com/css/responsive-slanted-divs-with-css/*/
-.work:before{
-  content: '';
-  position: absolute;
-  left: 0;
-  top: .75em;
-  overflow: visible;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  z-index: -1;
-  -webkit-transform: skewY(-3deg);
-  -moz-transform: skewY(-3deg);
-  -ms-transform: skewY(-3deg);
-  -o-transform: skewY(-3deg);
-  transform: skewY(-3deg);
-  -webkit-backface-visibility: hidden;
-}
-
+/*MAIN PROJECT SECTION*/
 .projects{
 	width: 700px;
     margin: 0 auto;
@@ -120,12 +111,9 @@ article img{
 	width: 290px;
 }
 
+/*HIDDEN PROJECT SECTIONS*/
 .details{
 	display:none;
-}
-
-.tech{
-	font-size: .7em;
 }
 
 .details div{
@@ -136,6 +124,10 @@ article img{
 	width:220px;
 	display:inline-block;
 	padding:0 5px 0 5px;
+}
+
+.tech{
+	font-size: .7em;
 }
 
 button{
@@ -161,8 +153,6 @@ hr{
     border: 0;
 }
 
-
-
 /*SPECIFIC STYLE FOR LOOK UP PROJECT*/
 #look-up-details{
 	width: 300px;
@@ -173,7 +163,6 @@ hr{
     position: relative;
     left: 44px;
 }
-
 
 /*FOOTER STUFF*/
 .contact a{
