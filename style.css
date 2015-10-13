@@ -38,6 +38,7 @@ a:visited{
 header img{
 	width:100%;
 }
+
 section{
 	position: relative;
 	z-index:1;
@@ -64,7 +65,7 @@ main p{
     margin: 0px 30px;
 }
 
-
+/*REFERENCE: http://lawrencenaman.com/css/responsive-slanted-divs-with-css/*/
 .work:before{
   content: '';
   position: absolute;
@@ -84,18 +85,22 @@ main p{
 }
 
 .projects{
-	width: 800px;
+	width: 700px;
     margin: 0 auto;
 }
 
 article {
 	margin-bottom: 50px;
+	text-align: left;
+}
+
+article:hover{
+	cursor:pointer;
 }
 
 .short-description{
-	width: 350px;
+	width: 400px;
 	display: inline-block;
-	text-align: left;
 	vertical-align: top;
 	padding: 20px 0 20px 0;
 }
@@ -108,17 +113,68 @@ article h3{
 article p{
 	margin: 0;
     width: auto;
-    text-align: left;
     padding: 10px 0 5px 0;
+}
+article img{
+	width: 290px;
+}
+
+.details{
+	display:none;
 }
 
 .tech{
 	font-size: .7em;
 }
-article img{
-	width: 200px;
+
+.details div{
+	margin:20px auto 0;
 }
 
+.details img{
+	width:220px;
+	display:inline-block;
+	padding:0 5px 0 5px;
+}
+
+button{
+	border: 1px solid black;
+    padding: 22px;
+    background-color: white;
+    margin: 30px auto;
+    width: 259px;
+    display: block;
+    font-size: 1.1em;
+    letter-spacing: 2px;
+    outline:0;
+}
+
+button:hover{
+	background-color: black;
+	color:white;
+}
+
+hr{
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+    height: 2px;
+    border: 0;
+}
+
+
+
+/*SPECIFIC STYLE FOR LOOK UP PROJECT*/
+#look-up-details{
+	width: 300px;
+}
+
+#look-up-img{
+	width: 374px;
+    position: relative;
+    left: 44px;
+}
+
+
+/*FOOTER STUFF*/
 .contact a{
 	display: inline-block;
 }
@@ -129,6 +185,7 @@ article img{
 .social-media img{
 	padding: 0 15px 0 15px;
 }
+
 
 
 
