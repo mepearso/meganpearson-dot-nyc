@@ -20,8 +20,8 @@ a:hover{
 a:visited{
 	color: black;
 }
-/*HEADER PARLLAX STUFF*/
-.parallax-window {
+/*HEADER PARALLAX STUFF*/
+.my-parallax-window {
     min-height: 500px;
 }
 
@@ -37,25 +37,25 @@ section:first-child h2{
 }
 
 /*slanted section lines - reference: http://lawrencenaman.com/css/responsive-slanted-divs-with-css/*/
-.process:before, .work:before, .contact:before{
-  content: '';
-  position: absolute;
-  left: 0;
-  top: .75em;
-  overflow: visible;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  z-index: -1;
-  -webkit-transform: skewY(-3deg);
-  -moz-transform: skewY(-3deg);
-  -ms-transform: skewY(-3deg);
-  -o-transform: skewY(-3deg);
-  transform: skewY(-3deg);
-  -webkit-backface-visibility: hidden;
+.about:before, .work:before, .contact:before{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: .75em;
+	overflow: visible;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	z-index: -1;
+	-webkit-transform: skewY(-3deg);
+	-moz-transform: skewY(-3deg);
+	-ms-transform: skewY(-3deg);
+	-o-transform: skewY(-3deg);
+	transform: skewY(-3deg);
+	-webkit-backface-visibility: hidden;
 }
 
-.process:before, .contact:before{
+.about:before, .contact:before{
 	background-color: rgb(242,242,242);
 }
 
@@ -67,12 +67,18 @@ h2{
 	font-weight: 700;
 }
 
+h3{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+}
+
 main p{
 	display: inline-block;
-	width: 350px;
+    width: 300px;
     line-height: 1.4em;
     text-align: justify;
-    margin: 0px 30px;
+    margin: 0px 15px 15px 15px;
+    vertical-align: top;
 }
 
 /*MAIN PROJECT SECTION*/
@@ -97,9 +103,8 @@ article:hover{
 	padding: 20px 0 20px 0;
 }
 
-article h3{
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 700;
+.short-description:hover{
+	font-style: italic;
 }
 
 article p{
