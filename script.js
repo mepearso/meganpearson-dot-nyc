@@ -1,11 +1,14 @@
 
 $('article').click(function(){
 	// hide other articles details section
-	var detailsToHide = $(this).siblings().children('.details');
-	detailsToHide.slideUp(500);
-	//show clicked articles details section
-	$(this).children('.details').slideDown(500);
+	var $detailsToHide = $(this).siblings().children('.details');
+	$detailsToHide.slideUp(500);
+	//show OR hide clicked articles details section
+	var $detailsToShow = $(this).children('.details')
+	$detailsToShow.slideToggle(500);
 });
+
+
 
 // $(window).scroll(function(e){
 //   parallax();
