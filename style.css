@@ -21,8 +21,9 @@ a:visited{
 	color: cadetblue;
 }
 /*HEADER PARALLAX STUFF*/
-.my-parallax-window {
+.parallax-window {
     min-height: 500px;
+    background: transparent;
 }
 
 /*EACH SECTION STYLES*/
@@ -181,7 +182,75 @@ hr{
 	padding: 0 15px 0 15px;
 }
 
+/*RESPONSIVENESS*/
+@media only screen and (max-width: 1000px) {
+	.parallax-window{
+  		display: none;
+  	}
 
+  	section:first-child h2{
+  		margin-bottom:20px;
+  	}
+
+  	.about div{
+  		margin:0 auto;
+  		width:300px;
+  	}
+
+  	main p{
+  		display: block;
+  		margin:0 0 15px 0;
+  	}
+}
+
+@media only screen and (max-width: 730px){
+	.projects{
+		width: 360px;
+		margin: 0 auto;
+	}
+
+	article{
+		text-align: center;
+	}
+
+	.short-description{
+		width:auto;
+	}
+
+	article p{
+		text-align: center;
+		margin:0;
+		padding-top: 15px;
+	}
+
+	article img{
+		display: inherit;
+		width:360px;
+	}
+
+	#look-up-img{
+		left:0;
+	}
+
+	.details p{
+		text-align: justify;
+	}
+
+	.details img{
+		width: 360px;
+		padding-bottom:17px;
+	}
+
+	.tech{
+		padding:0;
+	}
+}
+
+/*@media only screen and (min-device-width: 375px) and (max-device-width: 667px) { 
+  	.parallax-window{
+  		display: none;
+  	}
+}*/
 
 
 
