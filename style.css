@@ -203,7 +203,8 @@ hr{
   	}
 }
 
-@media only screen and (max-width: 730px){
+@media only screen and (min-width: 569px) and (max-width: 730px){
+	
 	.projects{
 		width: 360px;
 		margin: 0 auto;
@@ -237,8 +238,8 @@ hr{
 	}
 
 	.details img{
-		width: 360px;
-		padding-bottom:17px;
+		width: 116px;
+		padding: 0 0 17px 0;
 	}
 
 	.tech{
@@ -246,12 +247,69 @@ hr{
 	}
 }
 
-/*@media only screen and (min-device-width: 375px) and (max-device-width: 667px) { 
-  	.parallax-window{
-  		display: none;
-  	}
-}*/
+@media only screen 
+  and (min-width: 320px) 
+  and (max-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  	
+  	.about:before, .work:before, .contact:before{
+	  	-webkit-transform: skewY(-7deg);
+	    -moz-transform: skewY(-7deg);
+	    -ms-transform: skewY(-7deg);
+	    -o-transform: skewY(-7deg);
+	    transform: skewY(-7deg);
+	}
 
+
+  	section{
+  		padding-bottom: 30px;
+  	}
+
+  	.work{
+  		padding-bottom: 20px;
+  	}
+
+  	h2{
+		margin-bottom: 20px;
+	}
+
+	.projects{
+		width: 310px;
+	}
+
+	article p{
+		font-size: .9em;
+		margin:0;
+		padding-top: 15px;
+	}
+
+	article img{
+		width:100%;
+	}
+
+	.details div{
+		margin:10px auto 0;
+	}
+
+	.tech{
+		font-size: .6em;
+		padding-bottom: 0;
+	}
+
+	button{
+		margin: 20px auto;
+	}
+
+	#look-up-img{
+		left:-40px;
+	}
+
+	.details img{
+		width: 100px;
+		padding: 0;
+	}
+
+}
 
 
 
