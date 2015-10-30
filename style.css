@@ -164,17 +164,6 @@ hr{
     border: 0;
 }
 
-/*SPECIFIC STYLE FOR LOOK UP PROJECT*/
-#look-up-details{
-	width: 300px;
-}
-
-#look-up-img{
-	width: 374px;
-    position: relative;
-    left: 44px;
-}
-
 /*FOOTER STUFF*/
 .contact a{
 	display: inline-block;
@@ -234,10 +223,6 @@ hr{
 		width:360px;
 	}
 
-	#look-up-img{
-		left:0;
-	}
-
 	.details p{
 		text-align: justify;
 	}
@@ -252,10 +237,7 @@ hr{
 	}
 }
 
-@media only screen 
-  and (min-width: 320px) 
-  and (max-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (max-width: 568px){
   	
   	.about:before, .work:before, .contact:before{
 	  	-webkit-transform: skewY(-7deg);
@@ -264,7 +246,6 @@ hr{
 	    -o-transform: skewY(-7deg);
 	    transform: skewY(-7deg);
 	}
-
 
   	section{
   		padding-bottom: 30px;
@@ -320,13 +301,6 @@ hr{
 	button{
 		margin: 20px auto;
 	}
-
-	#look-up-img{
-		width:400px;
-		left:-25px;
-	}
-
-
 }
 
 
