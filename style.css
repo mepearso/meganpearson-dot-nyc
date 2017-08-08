@@ -73,6 +73,16 @@ h2{
 	font-weight: 700;
 }
 
+.work h2 {
+	margin-bottom: 0;
+}
+
+span.teeny{
+	font-size: 10px;
+	display: inline-block;
+	margin-bottom: 50px;
+}
+
 h3{
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 700;
@@ -80,11 +90,11 @@ h3{
 
 main p{
 	display: inline-block;
-    width: 300px;
-    line-height: 1.4em;
-    text-align: justify;
-    margin: 0px 15px 15px 15px;
-    vertical-align: top;
+  width: 300px;
+  line-height: 1.4em;
+  text-align: justify;
+  margin: 0px 15px 15px 15px;
+  vertical-align: top;
 }
 
 /*MAIN PROJECT SECTION*/
@@ -198,7 +208,7 @@ hr{
 }
 
 @media only screen and (min-width: 569px) and (max-width: 730px){
-	
+
 	.projects{
 		width: 360px;
 		margin: 0 auto;
@@ -238,7 +248,7 @@ hr{
 }
 
 @media only screen and (max-width: 568px){
-  	
+
   	.about:before, .work:before, .contact:before{
 	  	-webkit-transform: skewY(-7deg);
 	    -moz-transform: skewY(-7deg);
@@ -302,16 +312,3 @@ hr{
 		margin: 20px auto;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
